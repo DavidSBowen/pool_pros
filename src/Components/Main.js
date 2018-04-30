@@ -4,7 +4,7 @@ import Header from './Header/Header';
 import Body from './Body/Body';
 import Footer from './Footer/Footer';
 
-import './Main.css';
+import './../../Styles/CSS/Main.css';
 
 class Main extends Component {
     render() {

@@ -1,0 +1,75 @@
+
+#header-logo {
+    width: 150px;
+    margin-top: 15px;
+    display: inline;
+}
+
+#menu-icon {
+    position: absolute;
+    top: 5px;
+    right: 20px;
+    z-index: 100;
+    display:inline-block;
+    width: auto;
+    height: 60px;
+    border-radius: 50%;
+    padding: 0;
+    cursor: pointer;
+}
+
+#menu-list h4 {
+    text-align: center;
+    color: rgb(1,82,158);
+}
+
+#menu-list img {
+    padding-right:15px;
+    width: 15px;
+}
+
+#menu-list li {
+    list-style: none;
+    text-align: center;
+    width: 100%;
+    margin: 5px 0 0 0;
+    background-color: rgb(242, 242, 242);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+#menu-list p {
+    padding-left: 15px;
+    color: rgb(97,97,97);
+}
+
+#exit-menu-list {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-weight: bold;
+    font-size: 20px;
+    color: rgb(2,199,198);
+    cursor: pointer;
+    padding: 5px;
+}
+
+#find-pro {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.inline-block-container {
+    display: inline-block;
+    position: absolute;
+    right: 80px;
+}
+
+#find-pro > img, #find-pro > p {
+    margin: 5px 5px 0 5px;
+}
