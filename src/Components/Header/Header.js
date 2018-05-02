@@ -1,83 +1,52 @@
 import React, { Component } from 'react';
 
-import './../../STyles/CSS/Header.css';
+import MobileMenu from './MobileMenu';
+
+import Logo from './../../Resources/images/Dev_Test_Assets/pool-pros-logo.png';
+import Location from './../../Resources/images/Dev_Test_Assets/location-icon.png';
+import MenuIconMobile from './../../Resources/images/Dev_Test_Assets/menu-icon-mobile.png';
+import WaterImage from './../../Resources/images/Dev_Test_Assets/water-image.png';
 
 class Header extends Component {
 
-    componentDidMount() {
-        const menuIcon = document.getElementById('menu-icon');
-        const ul = document.getElementById('menu-list');
-        const button = document.getElementById('exit-menu-list');
-
-        menuIcon.addEventListener('click', (event) => {
-            ul.style.display = 'block';
-        });
-        button.addEventListener('click', (event) => {
-            ul.style.display = 'none';
-        });
+    constructor(props) {
+        super(props);
+        this.state = {
+            mobileHidden: true
+        };
     }
 
+    componentDidUpdate() {
+        // console.log('state mobileHidden?:', this.state.mobileHidden);
+    }
+
+    handleClick_mobileMenu = () => {
+        this.setState(
+            this.state.mobileHidden ? { mobileHidden: false } : { mobileHidden: true }
+        );
+    };
+
     render() {
-
         return (
-
-            <header class="flexbox flexbox-row">
-                {/* use picture element */}
-                <img id="header-logo"
-                    src={require('./../Resources/images/Dev_Test_Assets/pool-pros-logo.png')}
-                    alt="" />
-
-                <div id="flexbox flexbox-row">
-                    <img
-                        src={require('./../Resources/images/Dev_Test_Assets/location-icon.png')}
-                        alt="" />
-                    <p>Find a Pool Pro</p>
-                </div>
-
-                <nav id="main-nav">
-                    <img src={require('./../Resources/images/Dev_Test_Assets/menu-icon-mobile.png')}
-                        alt="" id="menu-icon" />
-                    <ul id="menu-list">
-                        <div className="flexbox flexbox-row">
-                            <h4>MENU</h4>
-                            <a id="exit-menu-list">X</a>
+            <div>
+                <header>
+                    <div className="flex flex-space-between">
+                        <img className="img-mobile" src={Logo} alt="" />
+                        <div
+                            className="flex flex-row flex-space-between flex-nowrap border-radius-1 border-lightblue padding-1 margin-1">
+                            <img className="icon-small padding-1" src={Location} alt="" />
+                            <p className="text-blue text-uppercase text-lightblue text-bold text-small padding-1">Find A Pro</p>
                         </div>
-                        <div className="flexbox flexbox-col">
-                            <a href="#">
-                                <li>
-                                    <p>Pool & Spas</p>
-                                    <img src={require('./../Resources/images/Dev_Test_Assets/next-arrow.png')}
-                                        alt="" />
-                                </li>
-                            </a>
-                            <a href="#">
-                                <li>
-                                    <p>Supplies</p>
-                                    <img src={require('./../Resources/images/Dev_Test_Assets/next-arrow.png')}
-                                        alt="" />
-                                </li>
-                            </a>
-                            <a href="#">
-                                <li>
-                                    <p>Resources</p>
-                                    <img src={require('./../Resources/images/Dev_Test_Assets/next-arrow.png')}
-                                        alt="" />
-                                </li>
-                            </a>
-                            <a href="#">
-                                <li>
-                                    <p>Services</p>
-                                    <img src={require('./../Resources/images/Dev_Test_Assets/next-arrow.png')}
-                                        alt="" />
-                                </li>
-                            </a>
-                        </div>
-                    </ul>
-                </nav>
-                {/* Header will contain:
-                Nav
-                Pool Image */}
-            </header>
+                        <img
+                            className="pointer img-mobile-menu"
+                            src={MenuIconMobile}
+                            alt=""
+                            onClick={this.handleClick_mobileMenu} />
+                        {this.state.mobileHidden ? false : <MobileMenu handleClick_mobileMenu={this.handleClick_mobileMenu} />}
+                    </div>
+                </header>
+                <img className="margin-1-v img-under_header" src={WaterImage} alt="" />
+            </div>
         );
     }
 }

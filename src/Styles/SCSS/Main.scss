@@ -1,8 +1,15 @@
-body {
+
+@import '_MainDesktop';
+@import '_MainMobile';
+@import '_MainTablet';
+
+// Element Modifiers
+
+body, ul {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-  }  
+}
 
 a {
     text-decoration: none;
@@ -12,11 +19,138 @@ li {
     list-style: none;
 }
 
-img, p{
+img, p, a{
     display: inline-block;
+    margin: 0;
+}
+
+img {
+    min-width: 10px;
+    min-height: 10px;
 }
 
 header {
     box-shadow: 0px 2px 4px rgba(0,0,0,.5);
-    height: 50px;
+}
+
+// Text Modifiers
+
+.text-bold {
+    font-weight: bold;
+}
+
+.text-blue {
+    color: $blue;
+}
+
+.text-lightblue {
+    color: $lightblue;
+}
+
+.text-grey {
+    color: $grey;
+}
+
+.text-lightgrey {
+    color: $lightgrey;
+}
+
+.text-darkgrey {
+    color: $darkgrey;
+}
+
+.text-teal {
+    color: $teal;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.text-small {
+    font-size: .8em;
+}
+
+.text-center {
+    text-align: center;
+    margin: 0 auto;
+    align-self: center;
+}
+
+// Flex
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-nowrap {
+    flex-wrap: nowrap;
+}
+
+.flex-space-between {
+    justify-content: space-between;
+}
+
+// Pointer Cursor
+
+.pointer {
+    cursor: pointer;
+}
+
+// Button Modifiers
+
+.button-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    padding: 5px;
+}
+
+// Border Modifiers
+
+.border-lightblue {
+    border: 2px solid $lightblue;
+}
+
+.border-radius-1 {
+    border-radius: 3px;
+}
+
+// Spacing Modifiers
+
+.padding-1 {
+    padding: 2px 4px;
+}
+
+.margin-1 {
+    margin: 10px;
+}
+
+.margin-1-v {
+    margin: 10px 0;
+}
+
+// Image Modifiers
+
+.icon-small {
+    width: 15px;
+}
+
+
+
+// Hover Modifiers
+
+.hover {
+    opacity: 1;
+    transition: .2s;
+}
+
+.hover:hover {
+    opacity: .65;
+    transition: .2s;
 }
