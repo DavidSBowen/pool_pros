@@ -276,15 +276,3 @@ header {
     top: 5px;
     left: 7px;
 }
-
-// Visibility
-
-.visible {
-    max-height: 100%;
-    transition: .5s;
-}
-
-.invisible {
-    max-height: 0%;
-    transition: .5s;
-}
