@@ -1,0 +1,20 @@
+{
+    "certifications": [
+        {
+            "name":"Service",
+            "information":false
+        },
+        {
+            "name":"Installation",
+            "information":false
+        },
+        {
+            "name":"Residential",
+            "information":false
+        },
+        {
+            "name":"Commercial",
+            "information":true
+        }
+    ]
+}

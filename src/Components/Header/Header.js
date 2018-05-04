@@ -5,7 +5,6 @@ import MobileMenu from './MobileMenu';
 import Logo from './../../Resources/images/Dev_Test_Assets/pool-pros-logo.png';
 import Location from './../../Resources/images/Dev_Test_Assets/location-icon.png';
 import MenuIconMobile from './../../Resources/images/Dev_Test_Assets/menu-icon-mobile.png';
-import WaterImage from './../../Resources/images/Dev_Test_Assets/water-image.png';
 
 class Header extends Component {
 
@@ -31,12 +30,14 @@ class Header extends Component {
             <div>
                 <header>
                     <div className="flex flex-space-between">
-                        <img className="img-mobile" src={Logo} alt="" />
-                        <div
+                        <a href="/">
+                            <img className="img-mobile" src={Logo} alt="" />
+                        </a>
+                        <a href="/"
                             className="flex flex-row flex-space-between flex-nowrap border-radius-1 border-lightblue padding-1 margin-1">
                             <img className="icon-small padding-1" src={Location} alt="" />
                             <p className="text-blue text-uppercase text-lightblue text-bold text-small padding-1">Find A Pro</p>
-                        </div>
+                        </a>
                         <img
                             className="pointer img-mobile-menu"
                             src={MenuIconMobile}
@@ -45,8 +46,11 @@ class Header extends Component {
                         {this.state.mobileHidden ? false : <MobileMenu handleClick_mobileMenu={this.handleClick_mobileMenu} />}
                     </div>
                 </header>
-                <img className="margin-1-v img-under_header" src={WaterImage} alt="" />
-            </div>
+                <div className="banner-container">
+                    <div className="margin-v-1 banner" alt="" >
+                    </div>
+                </div>
+            </div >
         );
     }
 }

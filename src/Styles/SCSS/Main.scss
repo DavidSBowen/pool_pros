@@ -1,7 +1,8 @@
 
-@import '_MainDesktop';
-@import '_MainMobile';
-@import '_MainTablet';
+@import '_desktop';
+@import '_mobile';
+@import '_tablet';
+@import '_variables';
 
 // Element Modifiers
 
@@ -9,6 +10,7 @@ body, ul {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
+    white-space: nowrap;
 }
 
 a {
@@ -30,13 +32,17 @@ img {
 }
 
 header {
-    box-shadow: 0px 2px 4px rgba(0,0,0,.5);
+    box-shadow: 0px 2px 4px $boxShadow;
 }
 
 // Text Modifiers
 
 .text-bold {
     font-weight: bold;
+}
+
+.text-thin {
+    font-weight: lighter
 }
 
 .text-blue {
@@ -67,8 +73,16 @@ header {
     text-transform: uppercase;
 }
 
+.text-verysmall {
+    font-size: .5em;
+}
+
 .text-small {
     font-size: .8em;
+}
+
+.text-large {
+    font-size: 1.2em;
 }
 
 .text-center {
@@ -102,16 +116,26 @@ header {
     cursor: pointer;
 }
 
+// No Select
+
+.no_select::selection {
+    background:none;
+}
+
 // Button Modifiers
 
 .button-close {
     position: absolute;
-    top: 20px;
-    right: 30px;
+    top: 10px;
+    right: 20px;
     padding: 5px;
 }
 
 // Border Modifiers
+
+.border {
+    border: .005rem solid $lightgrey2;
+}
 
 .border-lightblue {
     border: 2px solid $lightblue;
@@ -121,17 +145,51 @@ header {
     border-radius: 3px;
 }
 
-// Spacing Modifiers
+.border-radius-2 {
+    border-radius: 5px;
+}
+
+.border-no_bottom {
+    border-bottom: 0;
+}
+
+.border-no_top {
+    border-top: 0;
+}
+
+.border-no_left {
+    border-left: 0;
+}
+
+.border-no_right {
+    border-right: 0;
+}
+
+// Padding Modifiers
 
 .padding-1 {
     padding: 2px 4px;
 }
 
+.padding-2 {
+    padding: 15px;
+}
+
+.padding-h-2 {
+    padding: 0 15px;
+}
+
+// Margin Modifiers
+
 .margin-1 {
+    margin: 5px;
+}
+
+.margin-2 {
     margin: 10px;
 }
 
-.margin-1-v {
+.margin-v-1 {
     margin: 10px 0;
 }
 
@@ -140,8 +198,6 @@ header {
 .icon-small {
     width: 15px;
 }
-
-
 
 // Hover Modifiers
 
@@ -153,4 +209,82 @@ header {
 .hover:hover {
     opacity: .65;
     transition: .2s;
+}
+
+// Background
+
+.background-lightgrey {
+    background-color: $lightgrey;
+}
+
+.background-lightgrey-2 {
+    background-color: $lightgrey2;
+}
+
+.background-white {
+    background-color: $white;
+}
+
+// Checkbox
+
+.checkbox {
+	-webkit-appearance: none;
+	background-color: $white;
+    border: 1px solid $lightgrey2;
+    padding: 11px;
+	border-radius: 5px;
+	display: inline-block;
+    position: relative;
+    transition: .1s;
+}
+
+.checkbox:checked {
+	background-color: $lightblue;
+    color: $white;
+    transition: .1s;
+}
+
+.checkbox:focus {
+    outline-color: $lightblue;
+}
+
+.checkbox:checked:after {
+    content: '\000A0';
+    background-color: $white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -3px 0 0 -3px;
+    width: 6px;
+    height: 6px;
+	color: $white;
+}
+
+// Info Box
+
+.box {
+    height: 20px;
+    width: 20px;
+    position: relative;
+}
+
+
+// Center Icon
+
+.centerIcon {
+    position: relative;
+    top: 5px;
+    left: 7px;
+}
+
+// Visibility
+
+.visible {
+    max-height: 100%;
+    transition: .5s;
+}
+
+.invisible {
+    max-height: 0%;
+    transition: .5s;
 }

@@ -8,12 +8,12 @@ class MobileMenu extends Component {
         const { handleClick_mobileMenu } = this.props;
 
         return (
-            <nav className="modal border-top-teal border-bottom-teal">
+            <nav className="modal-menu border-top-teal border-bottom-teal">
                 <div className="flex">
-                    <p className="text-center --modal-title text-bold text-uppercase text-lightblue">Menu</p>
+                    <p className="text-center --modal-title text-large text-bold text-uppercase text-lightblue">Menu</p>
                     <p 
-                        className="pointer button-close text-teal text-bold"
-                        onClick={handleClick_mobileMenu}>X</p>
+                        className="pointer button-close text-teal ss-delete text-large"
+                        onClick={handleClick_mobileMenu}></p>
                 </div>
                 <ul>
                     <a className="flex flex-space-between --modal-item text-grey hover" href="/">

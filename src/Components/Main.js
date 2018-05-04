@@ -5,17 +5,21 @@ import Body from './Body/Body';
 import Footer from './Footer/Footer';
 
 import './../Styles/SCSS/Main.scss';
+import './../Resources/ss-pika/webfonts/ss-pika.css';
 
 class Main extends Component {
 
-    state = {
-        layout: ''
-    }
+    constructor(props) {
+        super(props);
+        this.state = {
+            layout: ''
+        }
+    };
 
     componentWillMount() {
         let windowInnerWidth = window.innerWidth;
         this.useWindowWidthToDefineLayout(windowInnerWidth);
-    }
+    };
 
     componentDidMount() {
         window.addEventListener('resize', (e) => {
@@ -23,11 +27,11 @@ class Main extends Component {
             this.useWindowWidthToDefineLayout(windowInnerWidth);
         });
         console.log(this.state.layout);
-    }
+    };
 
     componentDidUpdate() {
         console.log(this.state.layout);
-    }
+    };
 
     useWindowWidthToDefineLayout = (width) => {
         if (width < 600) {
