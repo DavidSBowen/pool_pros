@@ -25,7 +25,7 @@ class Filter extends Component {
         const { height } = this.state;
 
         return (
-            <div className="background-lightgrey padding-2">
+            <div className="background-lightgrey padding-3 border-bottom">
                 <div className="flex flex-row flex-space-between">
                     <p id="test" className="text-lightblue text-bold padding-h-2">
                         {dealers.length} dealers in {zipcode}
@@ -43,7 +43,6 @@ class Filter extends Component {
                     height={height}>
                     <FilterSelections />
                 </AnimateHeight>
-
             </div>
         );
     }

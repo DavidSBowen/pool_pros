@@ -28,7 +28,7 @@ class Header extends Component {
     render() {
         return (
             <div>
-                <header>
+                <header className="boxshadow">
                     <div className="flex flex-space-between">
                         <a href="/">
                             <img className="img-mobile" src={Logo} alt="" />

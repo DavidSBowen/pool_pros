@@ -31,8 +31,14 @@ img {
     min-height: 10px;
 }
 
-header {
+// Box Shadow
+
+.boxshadow {
     box-shadow: 0px 2px 4px $boxShadow;
+}
+
+.boxshadow-light {
+    box-shadow: 0px 2px 5px $boxShadow_light;
 }
 
 // Text Modifiers
@@ -69,6 +75,10 @@ header {
     color: $teal;
 }
 
+.text-white {
+    color: $white;
+}
+
 .text-uppercase {
     text-transform: uppercase;
 }
@@ -81,14 +91,30 @@ header {
     font-size: .8em;
 }
 
+.text-smaller {
+    font-size: .7em;
+}
+
 .text-large {
     font-size: 1.2em;
+}
+
+.text-verylarge {
+    font-size: 1.5em;
 }
 
 .text-center {
     text-align: center;
     margin: 0 auto;
     align-self: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-wrap {
+    word-wrap: break-word;
 }
 
 // Flex
@@ -102,12 +128,38 @@ header {
     flex-direction: row;
 }
 
+.flex-col {
+    flex-direction: column;
+}
+
 .flex-nowrap {
     flex-wrap: nowrap;
 }
 
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
 .flex-space-between {
     justify-content: space-between;
+}
+
+.flex-space-around {
+    justify-content: space-around;
+}
+
+.flex-space-around {
+    justify-content: space-evenly;
+}
+
+.flex-align-center {
+    align-items: center;
+}
+
+.flex-evensize {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis:65px;
 }
 
 // Pointer Cursor
@@ -141,12 +193,40 @@ header {
     border: 2px solid $lightblue;
 }
 
+.border-teal-1 {
+    border: 1px solid $teal;
+}
+
+.border-teal-2 {
+    border: 2px solid $teal;
+}
+
+.border-radius {
+    border-radius: 2px;
+}
+
 .border-radius-1 {
     border-radius: 3px;
 }
 
 .border-radius-2 {
     border-radius: 5px;
+}
+
+.border-top {
+    border-top: .005rem solid $lightgrey2;
+}
+
+.border-bottom {
+    border-bottom: .005rem solid $lightgrey2;
+}
+
+.border-left {
+    border-left: .005rem solid $lightgrey2;
+}
+
+.border-right {
+    border-right: .005rem solid $lightgrey2;
 }
 
 .border-no_bottom {
@@ -165,21 +245,74 @@ header {
     border-right: 0;
 }
 
+// Center Box
+
+.centerbox {
+    margin: 0 auto;
+}
+
 // Padding Modifiers
+
+.padding {
+    padding: 2px 2px;
+}
 
 .padding-1 {
     padding: 2px 4px;
+}
+
+.padding-1andhalf {
+    padding: 5px 8px;
 }
 
 .padding-2 {
     padding: 15px;
 }
 
+.padding-3 {
+    padding: 20px;
+}
+
+.padding-h-1 {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
 .padding-h-2 {
-    padding: 0 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.padding-h-3 {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.padding-v-1 {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.padding-v-1andhalf {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.padding-v-2 {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.padding-v-3 {
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 // Margin Modifiers
+
+.margin {
+    margin: 2px;
+}
 
 .margin-1 {
     margin: 5px;
@@ -189,8 +322,43 @@ header {
     margin: 10px;
 }
 
+.margin-3 {
+    margin: 20px;
+}
+
 .margin-v-1 {
-    margin: 10px 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.margin-h-1 {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.margin-h-2 {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.margin-h-3 {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.margin-h-10percent {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.margin-h-20percent {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.margin-h-30percent {
+    margin-left: 15%;
+    margin-right: 15%;
 }
 
 // Image Modifiers
@@ -223,6 +391,14 @@ header {
 
 .background-white {
     background-color: $white;
+}
+
+.background-blue {
+    background-color: $blue;
+}
+
+.background-lightblue {
+    background-color: $lightblue;
 }
 
 // Checkbox
@@ -275,4 +451,22 @@ header {
     position: relative;
     top: 5px;
     left: 7px;
+}
+
+// Width
+
+.fullWidth {
+    width: 100%;
+}
+
+.halfWidth {
+    width: 50%;
+    max-width: 50%;
+    min-width: 50%;
+}
+
+.fortyWidth {
+    width: 40%;
+    max-width: 40%;
+    min-width: 40%;
 }

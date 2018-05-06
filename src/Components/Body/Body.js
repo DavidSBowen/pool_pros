@@ -17,23 +17,11 @@ class Body extends Component {
         };
     };
 
-    componentDidMount() {
-        // console.log('test',this.state);
-        // console.log(data.zipcode);
-        // console.log(data.location.lat);
-        // console.log(data.location.lon);
-        // data.dealers.map(dealer => console.log(dealer.data));
-        // console.log(data.dealers);
-    };
-
     render() {
         return (
             <div>
                 <Filter zipcode={this.state.zipcode} dealers={this.state.dealers} />
-                <Listings />
-          {/* Body will contain:
-                Filter
-                Business listings */}
+                <Listings dealers={this.state.dealers} />
             </div>
         );
     }
