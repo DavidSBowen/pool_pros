@@ -38,7 +38,7 @@ class ListingIndividual extends Component {
 
     renderCertification = (icon, certification, index) => {
         return (
-            <div key={index} className="padding-1andhalf border halfWidth margin-3">
+            <div id="proItem" key={index} className="flex flex-row margin-v-1">
                 <img className="icon-small padding-h-1" src={icon} alt={certification}></img>
                 <p
                     className="text-left text-grey text-smaller padding">{certification}
@@ -81,7 +81,7 @@ class ListingIndividual extends Component {
                     </div>
                 </div>
                 <div className="background-lightgrey fullWidth padding-v-2">
-                    <div className="margin-h-3 border">
+                    <div id="proItemBox" className="flex flex-row flex-wrap">
                         {this.determineCertification()}
                     </div>
                 </div>

@@ -9,6 +9,7 @@ class Filter extends Component {
         super(props);
         this.state = {
             height: 0,
+            selectedFilters: []
         };
     };
 
@@ -41,7 +42,7 @@ class Filter extends Component {
                 <AnimateHeight
                     duration={300}
                     height={height}>
-                    <FilterSelections />
+                    <FilterSelections checkboxToggle={this.props.checkboxToggle} />
                 </AnimateHeight>
             </div>
         );

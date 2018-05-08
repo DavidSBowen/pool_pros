@@ -331,6 +331,11 @@ img {
     margin-bottom: 10px;
 }
 
+.margin-v-2 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
 .margin-h-1 {
     margin-left: 10px;
     margin-right: 10px;
@@ -469,4 +474,15 @@ img {
     width: 40%;
     max-width: 40%;
     min-width: 40%;
+}
+
+// IDs
+
+#proItem {
+    width: 120px;
+}
+
+#proItemBox {
+    width: 240px;
+    margin: auto;
 }
