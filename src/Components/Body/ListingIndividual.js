@@ -43,10 +43,39 @@ class ListingIndividual extends Component {
                 <p
                     className="text-left text-grey text-smaller padding">{certification}
                 </p>
-
             </div>
         );
-    }
+    };
+
+    renderWeekdayHours = () => {
+        const hours = this.props.dealer.weekHours;
+        const { mon, tue, wed, thu, fri } = hours;
+
+        if (mon === tue && mon === wed && mon === thu && mon === fri) {
+            return "Weekdays " + mon;
+        }
+    };
+
+    renderWeekendHours = (day) => {
+
+        const renderHours = (hours) => {
+            if (!hours.length) {
+                return "- CLOSED";
+            } else if (hours === "On Call") {
+                return "- On Call";
+            } else {
+                return hours;
+            }
+        };
+
+        if (day === 'saturday') {
+            let hours = this.props.dealer.weekHours.sat;
+            return renderHours(hours);
+        } else if (day === 'sunday') {
+            let hours = this.props.dealer.weekHours.sun;
+            return renderHours(hours);
+        }
+    };
 
     render() {
         const { dealer } = this.props;
@@ -75,9 +104,9 @@ class ListingIndividual extends Component {
 
                     <div className="padding-3 flex flex-col">
                         <p className="padding text-grey text-bold text-small">Business Hours</p>
-                        <p className="padding text-grey text-thin text-small">Weekdays</p>
-                        <p className="padding text-grey text-thin text-small">Saturday</p>
-                        <p className="padding text-grey text-thin text-small">Sunday</p>
+                        <p className="padding text-grey text-thin text-small">{this.renderWeekdayHours()}</p>
+                        <p className="padding text-grey text-thin text-small">Saturdays {this.renderWeekendHours('saturday')}</p>
+                        <p className="padding text-grey text-thin text-small">Sundays {this.renderWeekendHours('sunday')}</p>
                     </div>
                 </div>
                 <div className="background-lightgrey fullWidth padding-v-2">
