@@ -21,7 +21,7 @@ li {
     list-style: none;
 }
 
-img, p, a{
+img, p, a, input {
     display: inline-block;
     margin: 0;
 }
@@ -29,6 +29,16 @@ img, p, a{
 img {
     min-width: 10px;
     min-height: 10px;
+}
+
+// Display
+
+.block {
+    display: block;
+}
+
+.border-box {
+    box-sizing: border-box;
 }
 
 // Box Shadow
@@ -67,6 +77,10 @@ img {
     color: $lightgrey;
 }
 
+.text-lightgrey2 {
+    color: $lightgrey2;
+}
+
 .text-darkgrey {
     color: $darkgrey;
 }
@@ -95,6 +109,10 @@ img {
     font-size: .7em;
 }
 
+.text-normal {
+    font-size: 1em;
+}
+
 .text-large {
     font-size: 1.2em;
 }
@@ -113,8 +131,13 @@ img {
     text-align: left;
 }
 
+.text-right {
+    text-align: right;
+    display: block;
+}
+
 .text-wrap {
-    word-wrap: break-word;
+    white-space: normal;
 }
 
 // Flex
@@ -148,12 +171,20 @@ img {
     justify-content: space-around;
 }
 
-.flex-space-around {
+.flex-space-evenly {
     justify-content: space-evenly;
 }
 
+.flex-justify-center {
+    justify-content: center;
+}
+
 .flex-align-center {
-    align-items: center;
+    align-items: baseline;
+}
+
+.flex-align-flex_start {
+    align-items: flex-start;
 }
 
 .flex-evensize {
@@ -278,6 +309,11 @@ img {
     padding-right: 5px;
 }
 
+.padding-h-1andhalf {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
 .padding-h-2 {
     padding-left: 15px;
     padding-right: 15px;
@@ -336,6 +372,16 @@ img {
     margin-bottom: 15px;
 }
 
+.margin-v-3 {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.margin-h-half {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
 .margin-h-1 {
     margin-left: 10px;
     margin-right: 10px;
@@ -366,10 +412,30 @@ img {
     margin-right: 15%;
 }
 
+.margin-bottom-1 {
+    margin-bottom: 10px;
+}
+
+.margin-bottom-2 {
+    margin-bottom: 20px;
+}
+
+.margin-bottom-3 {
+    margin-bottom: 30px;
+}
+
 // Image Modifiers
+
+.icon-extrasmall {
+    width: 10px;
+}
 
 .icon-small {
     width: 15px;
+}
+
+.icon-med {
+    width: 20px;
 }
 
 // Hover Modifiers
@@ -410,6 +476,7 @@ img {
 
 .checkbox {
 	-webkit-appearance: none;
+	appearance: none;
 	background-color: $white;
     border: 1px solid $lightgrey2;
     padding: 11px;
@@ -417,6 +484,16 @@ img {
 	display: inline-block;
     position: relative;
     transition: .1s;
+}
+.checkbox-small {
+    padding: 8px;
+    border-radius: 2px;
+    background-color: $lightgrey2;
+    border-color: $grey;
+}
+
+.checkbox-small:focus {
+    outline: 0px;
 }
 
 .checkbox:checked {
@@ -464,6 +541,22 @@ img {
     width: 100%;
 }
 
+.ninetyWidth {
+    width: 90%;
+}
+
+.eightyWidth {
+    width: 80%;
+}
+
+.seventyWidth {
+    width: 70%;
+}
+
+.sixtyWidth {
+    width: 70%;
+}
+
 .halfWidth {
     width: 50%;
     max-width: 50%;
@@ -474,6 +567,33 @@ img {
     width: 40%;
     max-width: 40%;
     min-width: 40%;
+}
+
+.autoWidth {
+    width: inherit;
+}
+
+// Divider Lines
+
+.verticalLine {
+    width: 1px;
+    background: $white;
+    height: 10px;
+}
+
+.horizontalLine-white {
+    background: $white;
+    height: 1px;
+}
+
+.horizontalLine-lightgrey {
+    background: $lightgrey;
+    height: 1px;
+}
+
+.horizontalLine-lightgrey2 {
+    background: $lightgrey2;
+    height: 1px;
 }
 
 // IDs

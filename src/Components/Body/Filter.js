@@ -22,27 +22,27 @@ class Filter extends Component {
 
     render() {
 
-        const { zipcode, dealers } = this.props;
+        const { zipcode, dealers, checkboxToggle } = this.props;
         const { height } = this.state;
 
         return (
-            <div className="background-lightgrey padding-3 border-bottom">
+            <div className="background-lightgrey padding-3 border-bottom" id="filter">
                 <div className="flex flex-row flex-space-between">
-                    <p id="test" className="text-lightblue text-bold padding-h-2">
+                    <p className="text-lightblue text-bold padding-h-2">
                         {dealers.length} dealers in {zipcode}
                     </p>
                     <div className="flex flex-row">
                         <p className={"padding-2 border background-white " + (height === 'auto' ? "border-no_bottom" : "")}>Filter Results</p>
                         <a onClick={this.handleClick_filterDropdown}
                             id="filterDropdown"
-                            className={"pointer border text-small padding-2 border-no_left " + (height === 'auto' ? "border-no_bottom ss-directup" : "ss-dropdown")}>
+                            className={"hover pointer border text-small padding-2 border-no_left " + (height === 'auto' ? "border-no_bottom ss-directup" : "ss-dropdown")}>
                         </a>
                     </div>
                 </div>
                 <AnimateHeight
                     duration={300}
                     height={height}>
-                    <FilterSelections checkboxToggle={this.props.checkboxToggle} />
+                    <FilterSelections checkboxToggle={checkboxToggle} />
                 </AnimateHeight>
             </div>
         );

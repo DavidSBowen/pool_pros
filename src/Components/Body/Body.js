@@ -51,7 +51,7 @@ class Body extends Component {
         const zipcode = dealers.zipcode;
         return (
             <div>
-                <Filter checkboxToggle={this.checkboxToggle} zipcode={zipcode} dealers={this.dealerArray} />
+                <Filter checkboxToggle={this.checkboxToggle} zipcode={zipcode} dealers={this.state.displayArray} />
                 <Listings dealers={this.state.displayArray} />
             </div>
         );

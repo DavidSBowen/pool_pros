@@ -5,14 +5,14 @@ import Arrow from './../../Resources/images/Dev_Test_Assets/next-arrow.png';
 class MobileMenu extends Component {
 
     render() {
-        const { handleClick_mobileMenu } = this.props;
+        const { handleClick_mobileMenu, hidden } = this.props;
 
         return (
-            <nav className="modal-menu border-top-teal border-bottom-teal">
+            <nav id="modalMenu" className={`border-top-teal border-bottom-teal modal-menu modal-animate ${hidden ? false : "modal-active"}`}>
                 <div className="flex">
-                    <p className="text-center --modal-title text-large text-bold text-uppercase text-lightblue">Menu</p>
-                    <p 
-                        className="pointer button-close text-teal ss-delete text-large"
+                    <p className="text-center --modal-title text-large text-bold text-uppercase text-lightblue no_select pointer">Menu</p>
+                    <p
+                        className="pointer button-close text-teal ss-delete text-large hover"
                         onClick={handleClick_mobileMenu}></p>
                 </div>
                 <ul>

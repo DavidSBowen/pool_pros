@@ -17,7 +17,7 @@ class FilterSelections extends Component {
                     <div key={index} className="flex flex-row padding-2">
                         <input id={certification.name} onChange={this.props.checkboxToggle} type="checkbox" className="pointer checkbox" />
                         <label htmlFor={certification.name} className="padding-1 text-grey no_select">{certification.name}</label>
-                        {/* fix the below to render info box */}
+                        
                         {certification.information ? this.renderInfoBox() : false}
                     </div>
                 )

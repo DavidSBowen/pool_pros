@@ -15,35 +15,39 @@ class Header extends Component {
         };
     }
 
-    componentDidUpdate() {
-        // console.log('state mobileHidden?:', this.state.mobileHidden);
-    }
+    handleClick_findAPro = () => {
+        document.getElementById('filter').scrollIntoView({
+            behavior: "smooth"
+        });
+    };
+
 
     handleClick_mobileMenu = () => {
         this.setState(
-            this.state.mobileHidden ? { mobileHidden: false } : { mobileHidden: true }
+            { mobileHidden: this.state.mobileHidden ? false : true }
         );
     };
 
     render() {
         return (
             <div>
-                <header className="boxshadow">
+                <header className="boxshadow" id="banner">
                     <div className="flex flex-space-between">
                         <a href="/">
-                            <img className="img-mobile" src={Logo} alt="" />
+                            <img className="hover img-mobile" src={Logo} alt="" />
                         </a>
-                        <a href="/"
-                            className="flex flex-row flex-space-between flex-nowrap border-radius-1 border-lightblue padding-1 margin-1">
+                        <div
+                            onClick={this.handleClick_findAPro}
+                            className="pointer hover flex flex-row flex-space-between flex-nowrap border-radius-1 border-lightblue padding-1 margin-1">
                             <img className="icon-small padding-1" src={Location} alt="" />
                             <p className="text-blue text-uppercase text-lightblue text-bold text-small padding-1">Find A Pro</p>
-                        </a>
+                        </div>
                         <img
-                            className="pointer img-mobile-menu"
+                            className="hover pointer img-mobile-menu"
                             src={MenuIconMobile}
                             alt=""
                             onClick={this.handleClick_mobileMenu} />
-                        {this.state.mobileHidden ? false : <MobileMenu handleClick_mobileMenu={this.handleClick_mobileMenu} />}
+                        <MobileMenu hidden={this.state.mobileHidden} handleClick_mobileMenu={this.handleClick_mobileMenu} />
                     </div>
                 </header>
                 <div className="banner-container">
