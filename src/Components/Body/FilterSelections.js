@@ -11,26 +11,53 @@ class FilterSelections extends Component {
     }
 
     renderCertificationFilters() {
-        return (
-            certifications.certifications.map((certification, index) => {
-                return (
-                    <div key={index} className="flex flex-row padding-2">
-                        <input id={certification.name} onChange={this.props.checkboxToggle} type="checkbox" className="pointer checkbox" />
-                        <label htmlFor={certification.name} className="padding-1 text-grey no_select">{certification.name}</label>
-                        
-                        {certification.information ? this.renderInfoBox() : false}
-                    </div>
-                )
-            })
-        )
+        const { layout } = this.props;
+
+        if (layout === "desktop") {
+            return (
+                certifications.certifications.map((certification, index) => {
+                    return (
+                        <div key={index} className="flex flex-row padding-2">
+                            <input id={certification.name} onChange={this.props.checkboxToggle} type="checkbox" className="pointer checkbox-small" />
+                            <label htmlFor={certification.name} className="padding-1 text-small text-grey no_select">{certification.name}</label>
+
+                            {certification.information ? this.renderInfoBox() : false}
+                        </div>
+                    );
+                })
+            );
+        } else {
+            return (
+                certifications.certifications.map((certification, index) => {
+                    return (
+                        <div key={index} className="flex flex-row padding-2">
+                            <input id={certification.name} onChange={this.props.checkboxToggle} type="checkbox" className="pointer checkbox" />
+                            <label htmlFor={certification.name} className="padding-1 text-small text-grey no_select">{certification.name}</label>
+
+                            {certification.information ? this.renderInfoBox() : false}
+                        </div>
+                    );
+                })
+            );
+        }
     }
 
     render() {
-        return (
-            <div className="padding-h-2 background-white border">
-                {this.renderCertificationFilters()}
-            </div>
-        );
+        const { layout } = this.props;
+
+        if (layout === "desktop") {
+            return (
+                <div className="flex flex-row">
+                    {this.renderCertificationFilters()}
+                </div>
+            );
+        } else {
+            return (
+                <div className="padding-h-2 background-white border">
+                    {this.renderCertificationFilters()}
+                </div>
+            );
+        }
     }
 }
 

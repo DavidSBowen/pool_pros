@@ -1,26 +1,28 @@
 import React, { Component } from 'react';
 
-import Logo from './Logo';
-import SocialLinks from './SocialLinks';
-import ExtraLinks from './../MovingComponents/ExtraLinks';
-import Copywrite from './Copywrite';
+import FooterMobile from './FooterMobile';
+import FooterTablet from './FooterTablet';
+import FooterDesktop from './FooterDesktop';
 
 class Footer extends Component {
     render() {
-        return (
-            <div>
-                <div className="background-blue flex flex-col padding-3">
-                    <Logo />
-                    <SocialLinks />
-                </div>
-                <ExtraLinks />
-                <div className="background-lightblue">
-                    <div className="horizontalLine-white margin-h-3"></div>
-                </div>
-                <Copywrite />
-            </div>
-        );
-    }
-}
+
+        const { layout } = this.props;
+
+        if (layout === "mobile") {
+            return (
+                <FooterMobile layout={layout} />
+            );
+        } else if (layout === "tablet") {
+            return (
+                <FooterTablet />
+            );
+        } else if (layout === "desktop") {
+            return (
+                <FooterDesktop />
+            );
+        };
+    };
+};
 
 export default Footer;

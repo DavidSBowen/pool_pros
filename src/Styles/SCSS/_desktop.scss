@@ -1,1 +1,113 @@
 @import 'variables';
+@import 'keyframes';
+
+@media only screen and (min-width: 801px)
+{
+
+    .modal-menu {
+        display: none;
+        position: fixed;
+        left: 0;
+        width: 100%;
+        background: white;
+        margin: 0;
+        padding: 0;
+        z-index: 100;
+
+        opacity: 0;
+        top: -200px;
+        transition: transform .3s ease-in-out, opacity .3s ease-in-out;
+        
+        &.modal-active {
+            display: block;
+            top: 0;
+            opacity: 1;
+            &.modal-animate {
+                animation: mobile_menu_modal .3s ease-in-out;
+            }
+        }
+        .--modal-title {
+            padding: 30px 0;
+        }
+        .--modal-item {
+            padding: 25px 30px;
+            margin: 5px 0 0 0;
+            background: $lightgrey;
+        }
+    }
+
+    .pro-modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 200; /* Sit on top */
+        padding-top: 30px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+    
+    /* Modal Content */
+    .pro-modal-content {
+        position: relative;
+        background-color: #fefefe;
+        margin: auto;
+        padding: 0;
+        border: 1px solid #888;
+        width: 50%;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+        -webkit-animation-name: animatetop;
+        -webkit-animation-duration: 0.4s;
+        animation-name: animatetop;
+        animation-duration: 0.4s
+    }
+
+    .banner-container{
+        .banner {
+            background-image: url('../../Resources/images/Dev_Test_Assets/water-image.png');
+            background-repeat: no-repeat;
+            background-size: 235%;
+            background-position: center;
+            background-position-y: 25%;
+            height: 80px;
+        }
+    }
+
+    .img-mobile {
+        width: 140px;
+        height: auto;
+        position: relative;
+        left: 10px;
+    }
+
+    .img-mobile-menu {
+        width: 60px;
+        position: relative;
+        top: 5px;
+        right: 5px;
+    }
+
+    .border-top-teal {
+        border-top: 5px solid $teal;
+    }
+
+    .border-bottom-teal {
+        border-bottom: 5px solid $teal;
+    }
+
+    #banner {
+        height: 45px;
+    }
+
+    .listingWidth {
+        width: 381px;
+    }
+
+    .img-desktop {
+        width: 200px;
+        height: auto;
+    }
+}

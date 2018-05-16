@@ -48,12 +48,13 @@ class Body extends Component {
     };
 
     render() {
+        const { layout } = this.props;
         const zipcode = dealers.zipcode;
         return (
-            <div>
-                <Filter checkboxToggle={this.checkboxToggle} zipcode={zipcode} dealers={this.state.displayArray} />
-                <Listings dealers={this.state.displayArray} />
-            </div>
+            <main>
+                <Filter layout={layout} checkboxToggle={this.checkboxToggle} zipcode={zipcode} dealers={this.state.displayArray} />
+                <Listings layout={layout} dealers={this.state.displayArray} />
+            </main>
         );
     }
 }

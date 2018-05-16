@@ -46,15 +46,15 @@ class Main extends Component {
     render() {
         return (
             <div>
-                <Header />
+                <Header layout={this.state.layout} />
                 {/* Header will contain:
                 Nav
                 Pool Image */}
-                <Body />
+                <Body layout={this.state.layout} />
                 {/* Body will contain:
                 Filter
                 Business listings */}
-                <Footer />
+                <Footer layout={this.state.layout} />
                 {/* Footer will contain:
                 Logo
                 Social Media Links

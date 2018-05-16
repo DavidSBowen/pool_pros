@@ -7,6 +7,8 @@ class ListingModal extends Component {
 
     constructor(props) {
         super(props);
+
+        // 
         this.state = {
             name: false,
             number: false,
@@ -15,10 +17,7 @@ class ListingModal extends Component {
         };
     };
 
-    checkFormValidity = () => {
-        // check that all fields have proper content
-    };
-
+    // checks if the field has any characters and returns a circle or green check circle above that field
     checkFieldValidity = (field) => {
 
         const { dealer } = this.props;
@@ -46,13 +45,12 @@ class ListingModal extends Component {
             default:
                 break;
         }
-        // field.length > 0 ? checkCircle : circle;
     };
 
     render() {
         const { dealer } = this.props;
         return (
-            <div className="">
+            <div>
                 <div className="background-blue padding-2">
                     <div className="text-white text-small margin-2">EMAIL</div>
                     <div className="text-white text-verylarge text-thin text-wrap margin-2">{dealer.name}</div>

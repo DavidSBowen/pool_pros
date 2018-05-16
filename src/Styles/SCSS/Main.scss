@@ -47,6 +47,10 @@ img {
     box-shadow: 0px 2px 4px $boxShadow;
 }
 
+.boxshadow-spread {
+    box-shadow: 0px 5px 10px $boxShadow;
+}
+
 .boxshadow-light {
     box-shadow: 0px 2px 5px $boxShadow_light;
 }
@@ -101,12 +105,12 @@ img {
     font-size: .5em;
 }
 
-.text-small {
-    font-size: .8em;
-}
-
 .text-smaller {
     font-size: .7em;
+}
+
+.text-small {
+    font-size: .8em;
 }
 
 .text-normal {
@@ -155,6 +159,10 @@ img {
     flex-direction: column;
 }
 
+.flex-row-reverse {
+    flex-direction: row-reverse;
+}
+
 .flex-nowrap {
     flex-wrap: nowrap;
 }
@@ -179,6 +187,10 @@ img {
     justify-content: center;
 }
 
+.flex-justify-end {
+    justify-content: flex-end;
+}
+
 .flex-align-center {
     align-items: baseline;
 }
@@ -189,8 +201,12 @@ img {
 
 .flex-evensize {
     flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis:65px;
+    flex-shrink: 0;
+    flex-basis: 0;
+}
+
+.flex-align_self-end {
+    align-self: flex-end;
 }
 
 // Pointer Cursor
@@ -232,6 +248,10 @@ img {
     border: 2px solid $teal;
 }
 
+.border-width-tiny {
+    border-width: 1px;
+}
+
 .border-radius {
     border-radius: 2px;
 }
@@ -242,6 +262,26 @@ img {
 
 .border-radius-2 {
     border-radius: 5px;
+}
+
+.border-radius-3 {
+    border-radius: 10px;
+}
+
+.border-radius-4 {
+    border-radius: 15px;
+}
+
+.border-radius-5 {
+    border-radius: 20px;
+}
+
+.border-radius-50percent {
+    border-radius: 50%;
+}
+
+.border-radius-bottom-3 {
+    border-radius: 0 0 10px 10px;
 }
 
 .border-top {
@@ -344,6 +384,11 @@ img {
     padding-bottom: 20px;
 }
 
+.padding-h-10percent {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
 // Margin Modifiers
 
 .margin {
@@ -410,6 +455,10 @@ img {
 .margin-h-30percent {
     margin-left: 15%;
     margin-right: 15%;
+}
+
+.margin-left-5percent {
+    margin-left: 5%;
 }
 
 .margin-bottom-1 {
@@ -581,6 +630,12 @@ img {
     height: 10px;
 }
 
+.verticalLine-medium {
+    width: 1px;
+    background: $lightgrey2;
+    height: 50px;
+}
+
 .horizontalLine-white {
     background: $white;
     height: 1px;
@@ -596,6 +651,11 @@ img {
     height: 1px;
 }
 
+.horizontalLine-blue {
+    background: $blue;
+    height: 1px;
+}
+
 // IDs
 
 #proItem {
@@ -605,4 +665,14 @@ img {
 #proItemBox {
     width: 240px;
     margin: auto;
+}
+
+#flexBoxListing {
+    height: 446px;
+    position: relative;
+}
+
+#flexBoxListingGreyArea {
+    position: absolute;
+    bottom: 0;
 }
