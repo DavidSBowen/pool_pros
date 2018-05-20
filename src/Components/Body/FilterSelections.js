@@ -64,9 +64,7 @@ class FilterSelections extends Component {
     }
 
     render() {
-        const { layout, checkBoxes } = this.props;
-
-        console.log(checkBoxes);
+        const { layout } = this.props;
 
         if (layout === "desktop") {
             return (
