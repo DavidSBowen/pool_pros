@@ -22,9 +22,8 @@ class Filter extends Component {
 
     render() {
 
-        const { zipcode, dealers, checkboxToggle, layout } = this.props;
+        const { zipcode, dealers, checkboxToggle, layout, checkBoxes } = this.props;
         const { height } = this.state;
-
 
         if (layout === "mobile") {
             return (
@@ -44,7 +43,9 @@ class Filter extends Component {
                     <AnimateHeight
                         duration={300}
                         height={height}>
-                        <FilterSelections checkboxToggle={checkboxToggle} />
+                        <FilterSelections
+                            checkBoxes={checkBoxes}
+                            checkboxToggle={checkboxToggle} />
                     </AnimateHeight>
                 </div>
             );
@@ -66,7 +67,9 @@ class Filter extends Component {
                     <AnimateHeight
                         duration={300}
                         height={height}>
-                        <FilterSelections checkboxToggle={checkboxToggle} />
+                        <FilterSelections
+                            checkBoxes={checkBoxes}
+                            checkboxToggle={checkboxToggle} />
                     </AnimateHeight>
                 </div>
             );
@@ -78,7 +81,10 @@ class Filter extends Component {
                             {dealers.length} dealers in {zipcode}
                         </p>
                         <div className="verticalLine-medium"></div>
-                        <FilterSelections layout={layout} checkboxToggle={checkboxToggle} />
+                        <FilterSelections
+                            layout={layout}
+                            checkBoxes={checkBoxes}
+                            checkboxToggle={checkboxToggle} />
                     </div>
                 </div>
             );

@@ -26,11 +26,6 @@ class Main extends Component {
             let windowInnerWidth = e.target.innerWidth;
             this.useWindowWidthToDefineLayout(windowInnerWidth);
         });
-        console.log(this.state.layout);
-    };
-
-    componentDidUpdate() {
-        console.log(this.state.layout);
     };
 
     useWindowWidthToDefineLayout = (width) => {

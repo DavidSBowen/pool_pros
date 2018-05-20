@@ -41,6 +41,10 @@ img {
     box-sizing: border-box;
 }
 
+.hidden {
+    display: none;
+}
+
 // Box Shadow
 
 .boxshadow {
@@ -234,6 +238,10 @@ img {
 
 .border {
     border: .005rem solid $lightgrey2;
+}
+
+.border-grey {
+    border: 1px solid $grey;
 }
 
 .border-lightblue {
@@ -513,6 +521,10 @@ img {
     background-color: $white;
 }
 
+.background-teal {
+    background-color: $teal;
+}
+
 .background-blue {
     background-color: $blue;
 }
@@ -537,8 +549,13 @@ img {
 .checkbox-small {
     padding: 8px;
     border-radius: 2px;
-    background-color: $lightgrey2;
-    border-color: $grey;
+    background-color: $white;
+    border-color: $lightgrey2;
+    
+    &.checkbox-yesno {
+        background-color: $lightgrey2;
+        border-color: $grey;
+    }
 }
 
 .checkbox-small:focus {
@@ -675,4 +692,40 @@ img {
 #flexBoxListingGreyArea {
     position: absolute;
     bottom: 0;
+}
+
+// Tooltip
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: -50%;
+    left: 100%;
+    
+    /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tooltip .tooltiptext::after {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    right: 100%; /* To the left of the tooltip */
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent black transparent transparent;
 }

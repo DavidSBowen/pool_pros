@@ -14,13 +14,27 @@ class Body extends Component {
         this.selectedCheckboxes = [];
 
         this.state = {
-            displayArray: this.dealerArray
+            displayArray: this.dealerArray,
+            checkBoxes: {}
         };
     }
 
     checkboxToggle = (event) => {
         const id = event.target.id;
         const indexOfId = this.selectedCheckboxes.indexOf(id);
+
+        if (this.state.checkBoxes[id] === true) {
+            this.setState(prevState => ({
+                checkBoxes: {
+                    ...prevState.checkBoxes,
+                    [id]: false
+                }
+            }));
+        } else {
+            let checkBoxes = Object.assign({}, this.state.checkBoxes);
+            checkBoxes[id] = true;
+            this.setState({ checkBoxes });
+        }
 
         indexOfId > -1 ? this.selectedCheckboxes.splice(indexOfId, 1) : this.selectedCheckboxes.push(id)
 
@@ -52,8 +66,15 @@ class Body extends Component {
         const zipcode = dealers.zipcode;
         return (
             <main>
-                <Filter layout={layout} checkboxToggle={this.checkboxToggle} zipcode={zipcode} dealers={this.state.displayArray} />
-                <Listings layout={layout} dealers={this.state.displayArray} />
+                <Filter
+                    checkBoxes={this.state.checkBoxes}
+                    layout={layout}
+                    checkboxToggle={this.checkboxToggle}
+                    zipcode={zipcode}
+                    dealers={this.state.displayArray} />
+                <Listings
+                    layout={layout}
+                    dealers={this.state.displayArray} />
             </main>
         );
     }

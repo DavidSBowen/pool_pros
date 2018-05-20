@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+import { YesNoBox } from './YesNoBox.js';
+import { SendContactProFormButton } from './SendContactProFormButton.js';
+
 import Circle from './../../Resources/images/Dev_Test_Assets/circle-form.png';
 import CheckCircle from './../../Resources/images/Dev_Test_Assets/checkmark-circle.png';
 
@@ -47,12 +50,21 @@ class ListingModal extends Component {
         }
     };
 
+    handleClick_exitButton = () => {
+        this.props.changeModalDisplay();
+    }
+
     render() {
-        const { dealer } = this.props;
+        const { dealer, layout } = this.props;
         return (
             <div>
                 <div className="background-blue padding-2">
-                    <div className="text-white text-small margin-2">EMAIL</div>
+                    <div className="flex">
+                        <div className="text-white text-small margin-2">EMAIL</div>
+                        <div
+                            onClick={this.handleClick_exitButton}
+                            className="pointer button-close text-white ss-delete text-large hover"></div>
+                    </div>
                     <div className="text-white text-verylarge text-thin text-wrap margin-2">{dealer.name}</div>
                 </div>
 
@@ -117,40 +129,21 @@ class ListingModal extends Component {
                             <p className="text-small text-lightgrey2"><em>optional</em></p>
                         </div>
                         <div className="flex flex-row fullWidth margin-v-1">
-                            <input
+                            <textarea
                                 id="commentInput"
                                 className="padding-1andhalf fullWidth text-large"
-                                type="text" />
+                            />
                         </div>
                     </div>
 
                     <div className="margin-2 text-grey text-small text-bold margin-v-2">Do you currently own a pool or spa?</div>
-                    <div className="flex flex-row margin-2 flex-align-flex_start margin-v-2">
-                        {/* <input onChange={this.props.checkboxToggle} type="checkbox" className="pointer checkbox" /> */}
-                        <div className="flex flex-row flex-align-flex_start">
-                            <input
-                                type="radio"
-                                className="pointer checkbox checkbox-small"
-                                name="spa"
-                                value="yes" />
-                            <label className="padding-1 text-grey no_select">Yes</label>
-                        </div>
 
-                        <div className="flex flex-row flex-align-flex_start margin-h-2">
-                            <input
-                                type="radio"
-                                className="pointer checkbox checkbox-small"
-                                name="spa"
-                                value="no" />
-                            <label className="padding-1 text-grey no_select">No</label>
-                        </div>
-                    </div>
+                    <YesNoBox dealer={dealer} layout={layout} />
 
                     <div className="horizontalLine-lightgrey2 margin-h-1 margin-v-2"></div>
 
-                    <div className="text-right margin-v-2 margin-h-1 margin-v-3">
-                        <a className="hover" href="/"><p className="text-teal">Send</p></a>
-                    </div>
+                    <SendContactProFormButton layout={layout} />
+
                 </div>
             </div>
         );

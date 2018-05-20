@@ -37,7 +37,7 @@ class Listings extends Component {
                             dealer={dealer.data} />
                     </div>
                 )
-            }
+            } else return false;
         })
     }
 

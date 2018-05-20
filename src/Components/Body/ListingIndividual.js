@@ -9,22 +9,16 @@ import ServiceIcon from './../../Resources/images/Dev_Test_Assets/gear-service-p
 
 class ListingIndividual extends Component {
 
-    componentDidMount() {
+    // handle click of "Contact This Pro" button
+    handleClick_contactPro = () => {
+        this.changeModalDisplay();
+    };
+
+    // toggle display of modal
+    changeModalDisplay = () => {
         const dealerID = this.props.dealer.companyID; // Grabbing dealerId from dealers json
         const dealerModal = document.getElementById(dealerID); // select modal element with ID from dealerId
-        const dealerContact = document.getElementById(dealerID + '-contact'); // selecting element 
-
-        // Event Listeners for "Contact this Pro" buttons
-        dealerModal.addEventListener('click', (event) => {
-            if (event.target === dealerModal) {
-                dealerModal.style.display = dealerModal.style.display === 'none' ? 'block' : 'none';
-            }
-        });
-
-        // Event Listeners for Modals 
-        dealerContact.addEventListener('click', (event) => {
-            dealerModal.style.display = dealerModal.style.display === 'none' ? 'block' : 'none';
-        });
+        dealerModal.style.display = dealerModal.style.display === 'none' ? 'block' : 'none';
     };
 
     // iterates through each certification for this dealer and picks the proper icon to display
@@ -127,7 +121,8 @@ class ListingIndividual extends Component {
                         <em className="text-small text-grey margin-3">Can't talk now? Click below to send an email.</em>
 
                         <div
-                            id={dealer.companyID + '-contact'}
+                            onClick={this.handleClick_contactPro}
+                            id={dealer.companyID + '-contact-' + layout}
                             className="hover flex flex-row border-teal-1 border-radius pointer padding-1andhalf">
                             <div className="text-blue ss-mail padding-1"></div>
                             <p className="text-blue padding-1 text-bold">Contact this Pro
@@ -146,12 +141,13 @@ class ListingIndividual extends Component {
                             {this.determineCertification()}
                         </div>
                     </div>
-                    <div className="pro-modal"
+                    <div
+                        className="pro-modal"
                         id={dealer.companyID}
                         style={{ display: "none" }}>
                         <div
                             className="pro-modal-content">
-                            <ListingModal dealer={dealer} />
+                            <ListingModal changeModalDisplay={this.changeModalDisplay} layout={layout} dealer={dealer} />
                         </div>
                     </div>
                 </div >
@@ -179,7 +175,8 @@ class ListingIndividual extends Component {
                         <em className="text-small text-grey margin-3">Can't talk now? Click below to send an email.</em>
 
                         <div
-                            id={dealer.companyID + '-contact'}
+                            onClick={this.handleClick_contactPro}
+                            id={dealer.companyID + '-contact-' + layout}
                             className="hover flex flex-row border-teal-1 border-radius pointer padding-1andhalf">
                             <div className="text-blue ss-mail padding-1"></div>
                             <p className="text-blue padding-1 text-bold">Contact this Pro
@@ -198,12 +195,13 @@ class ListingIndividual extends Component {
                             {this.determineCertification()}
                         </div>
                     </div>
-                    <div className="pro-modal"
+                    <div
+                        className="pro-modal"
                         id={dealer.companyID}
                         style={{ display: "none" }}>
                         <div
                             className="pro-modal-content">
-                            <ListingModal dealer={dealer} />
+                            <ListingModal changeModalDisplay={this.changeModalDisplay} layout={layout} dealer={dealer} />
                         </div>
                     </div>
                 </div >
@@ -230,7 +228,8 @@ class ListingIndividual extends Component {
                         <em className="text-smaller text-grey margin-3">Can't talk now? Click below to send an email.</em>
 
                         <div
-                            id={dealer.companyID + '-contact'}
+                            onClick={this.handleClick_contactPro}
+                            id={dealer.companyID + '-contact-' + layout}
                             className="hover flex flex-row border-teal-1 border-radius pointer padding-1andhalf">
                             <div className="text-blue ss-mail padding-1"></div>
                             <p className="text-blue padding-1 text-bold">Contact this Pro
@@ -249,12 +248,13 @@ class ListingIndividual extends Component {
                             {this.determineCertification()}
                         </div>
                     </div>
-                    <div className="pro-modal"
+                    <div
+                        className="pro-modal"
                         id={dealer.companyID}
                         style={{ display: "none" }}>
                         <div
                             className="pro-modal-content">
-                            <ListingModal dealer={dealer} />
+                            <ListingModal changeModalDisplay={this.changeModalDisplay} layout={layout} dealer={dealer} />
                         </div>
                     </div>
                 </div >

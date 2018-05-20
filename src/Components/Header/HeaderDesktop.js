@@ -46,7 +46,7 @@ class HeaderDesktop extends Component {
                     </div>
                 </header>
                 <div className="banner-container">
-                    <div className="margin-v-1 banner" alt="" >
+                    <div className="margin-v-1 banner" alt="banner picture of water bubbles" >
                     </div>
                 </div>
             </div >
